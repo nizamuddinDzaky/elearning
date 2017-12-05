@@ -1,5 +1,5 @@
 <?php
-	$rtl              =	$this->db->get_where('settings' , array('type'=>'rtl'))->row()->description;
+	// $rtl              =	$this->db->get_where('settings' , array('type'=>'rtl'))->row()->description;
 	$system_name        =	$this->db->get_where('settings' , array('type'=>'system_name'))->row()->description;
 	$system_title       =	$this->db->get_where('settings' , array('type'=>'system_title'))->row()->description;
 	$account_type       =	$this->session->userdata('login_type');

@@ -2,20 +2,21 @@
     $rtl          = $this->db->get_where('settings' , array('type'=>'rtl'))->row()->description;
     $skin_colour  =   $this->db->get_where('settings' , array('type'=>'skin_colour'))->row()->description;
 ?>
-<?php if ($rtl == 'rtl') { ?>
+
   <link rel="stylesheet" href="<?php echo base_url();?>style/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css">
-<?php } else { ?>
+
   <link href="<?php echo base_url();?>style/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-<?php } ?>
+
 <link href="<?php echo base_url();?>style/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
 <link href="<?php echo base_url();?>style/bower_components/morrisjs/morris.css" rel="stylesheet">
 <link href="<?php echo base_url();?>style/css/animate.css" rel="stylesheet">
 
-<?php if ($rtl == 'rtl') { ?>
-  <link href="<?php echo base_url();?>style/css/style-rtl.css" rel="stylesheet">
-<?php } else { ?>
+
+  
+
   <link href="<?php echo base_url();?>style/css/style.css" rel="stylesheet">
-<?php } ?>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link href="<?php echo base_url();?>style/css/colors/<?php if ($skin_colour != '') echo 'skin-' . $skin_colour;?>.css" id="theme" rel="stylesheet">
 <link href="<?php echo base_url();?>style/bower_components/owl.carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" />
