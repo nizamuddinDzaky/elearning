@@ -184,7 +184,7 @@
 			 </div>                
 			</div>
 </div>
-
+<script src="<?php echo base_url();?>style/bower_components/datatables/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function(){
       $('#myTable').DataTable();

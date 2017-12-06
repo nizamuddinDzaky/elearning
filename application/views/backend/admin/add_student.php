@@ -1,26 +1,75 @@
 <div class="row bg-title">
-<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-    <h4 class="page-title"><?php echo get_phrase('Add-Student'); ?></h4> </div>
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title"><?php echo get_phrase('Teachers');?></h4>
+    </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="<?php echo base_url();?>index.php?admin/admin_dashboard"><?php echo get_phrase('Dashboard'); ?></a></li>
-            <li class="active"><?php echo get_phrase('Add-Student'); ?></li>
+  		    <li><a href="<?php echo base_url(); ?>index.php?admin/admin_dashboard"><?php echo get_phrase('Dashboard');?></a></li>
+            <li><a class="active"><?php echo get_phrase('Teachers');?></a></li>
         </ol>
     </div>
 </div>
 
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-info" data-collapsed="0">
-        	<div class="panel-heading">
-            	<div class="panel-title" >
-					<font color="white"><?php echo get_phrase('Student-Form'); ?></font>
-            	</div>
-            </div>
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs bordered">
+			<li class="active">
+            	<a href="#list" data-toggle="tab">
+					<?php echo get_phrase('Teachers');?>
+                </a>
+            </li>
+			<li><a href="#add" data-toggle="tab">
+					<?php echo get_phrase('New');?>
+            	</a>
+            </li>
+		</ul>
 
-			<div class="panel-body">
-                <?php echo form_open(base_url() . 'index.php?admin/student/create/' , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
-					<div class="form-group">
+<div class="tab-content">
+		<div class="tab-pane box active" id="list">
+          <div class="white-box">
+            <div class="table-responsive">
+            <table id="myTable" class="table table-striped">
+              <thead>
+                <tr>
+                  <th style="text-align: center;"><?php echo get_phrase('Name');?></th>
+				          <th style="text-align: center;"><?php echo get_phrase('Username');?></th>
+                  <th style="text-align: center;"><?php echo get_phrase('Salary');?></th>
+			            <th style="text-align: center;"><?php echo get_phrase('Phone');?></th>
+			            <th style="text-align: center;"><?php echo get_phrase('Email');?></th>
+			            <th style="text-align: center;"><?php echo get_phrase('Options');?></th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php 
+		              $teachers	=	$this->db->get('student' )->result_array();
+		              foreach($teachers as $row):
+		          ?>
+                <tr>
+                <td style="text-align: center;"><?php echo $row['name'];?></td>
+            	  <td style="text-align: center;"><?php echo $row['username'];?></td>
+                <td style="text-align: center;"><?php echo $this->db->get_where('settings' , array('type' =>'currency'))->row()->description;?><?php echo $row['salary'];?></td>
+            	  <td style="text-align: center;"><?php echo $row['phone'];?></td>
+				        <td style="text-align: center;"><?php echo $row['email'];?></td>
+			         <td style="text-align: center;" class="text-nowrap"><a href="<?php echo base_url();?>index.php?admin/student_profile/<?php echo $row['student_id'];?>" data-toggle="tooltip" data-original-title="Profile"> <i class="fa fa-user text-inverse m-r-10"></i></a><a href="#" data-toggle="tooltip" onclick="confirm_modal('<?php echo base_url();?>index.php?admin/student/delete/<?php echo $row['student_id'];?>');" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a></td>
+                </tr>
+                <?php endforeach;?>
+              </tbody>
+            </table>
+            </div>
+            </div>
+          </div>
+
+	<div class="tab-pane box" id="add" style="padding: 5px">
+                <div class="box-content">
+                	<?php echo form_open(base_url() . 'index.php?admin/student/create/' , array('class' => 'form-horizontal form-groups-bordered validate', 'enctype' => 'multipart/form-data'));?>
+
+        <div class="col-md-12">
+          <div class="white-box">
+            <h3 class="box-title m-b-0"><?php echo get_phrase('New');?></h3>
+            <br><br>
+				<div class="padded">
+		     
+		     		 <div class="form-group">
 						<label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Name'); ?></label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="name" required="" value="" autofocus>
@@ -38,7 +87,7 @@
 						<label for="field-2" required class="col-sm-3 control-label"><?php echo get_phrase('Parent'); ?></label>
                         
 						<div class="col-sm-5">
-							<select name="parent_id" class="form-control select2">
+							<select name="parent_id" class="form-control" id="itemParent">
                               <option value=""><?php echo get_phrase('Select'); ?></option>
                               <?php 
 								$parents = $this->db->get('parent')->result_array();
@@ -56,7 +105,7 @@
 					<div class="form-group">
 						<label for="field-2" class="col-sm-3 control-label"><?php echo get_phrase('Class'); ?></label>
 						<div class="col-sm-5">
-							<select name="class_id" class="form-control" required="" onchange="return get_class_sections(this.value)">
+							<select name="class_id" class="form-control" required="" onchange="return get_class_sections(this.value)" id="itemClass">
                               <option value=""><?php echo get_phrase('Select'); ?></option>
                               <?php $classes = $this->db->get('class')->result_array();
 								foreach($classes as $row): ?>
@@ -188,14 +237,22 @@
 							<button type="submit" class="btn btn-info"><?php echo get_phrase('Add'); ?></button>
 						</div>
 					</div>
-                <?php echo form_close();?>
-            </div>
         </div>
-    </div>
+						 <?php echo form_close();?>
+                    </form>                
+                </div>                
+			</div>
+			 </div>                
+			</div>
 </div>
 
-<script type="text/javascript">
-	function get_class_sections(class_id) 
+<script src="<?php echo base_url();?>style/bower_components/datatables/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('#myTable').DataTable();
+
+    });
+    function get_class_sections(class_id) 
 	{
     	$.ajax({
             url: '<?php echo base_url();?>index.php?admin/get_class_section/' + class_id ,
@@ -205,4 +262,5 @@
             }
         });
     }
-</script>
+  </script>
+

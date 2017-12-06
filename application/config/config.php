@@ -9,7 +9,7 @@ $config['charset'] = 'UTF-8';
 $config['enable_hooks'] = FALSE;
 $config['subclass_prefix'] = 'MY_';
 $config['composer_autoload'] = FALSE;
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:;,_^$-+@&\-!()=';
 $config['allow_get_array'] = TRUE;
 $config['enable_query_strings'] = FALSE;
 $config['controller_trigger'] = 'c';

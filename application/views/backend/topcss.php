@@ -3,7 +3,7 @@
     $skin_colour  =   $this->db->get_where('settings' , array('type'=>'skin_colour'))->row()->description;
 ?>
 
-  <link rel="stylesheet" href="<?php echo base_url();?>style/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css">
+  <!-- <link rel="stylesheet" href="<?php echo base_url();?>style/bower_components/bootstrap-rtl-master/dist/css/bootstrap-rtl.min.css"> -->
 
   <link href="<?php echo base_url();?>style/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,7 +17,8 @@
   <link href="<?php echo base_url();?>style/css/style.css" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <link href="<?php echo base_url();?>style/css/colors/<?php if ($skin_colour != '') echo 'skin-' . $skin_colour;?>.css" id="theme" rel="stylesheet">
 <link href="<?php echo base_url();?>style/bower_components/owl.carousel/owl.carousel.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url();?>style/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">

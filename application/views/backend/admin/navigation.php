@@ -10,7 +10,7 @@
                     <hr>
                     <li> <a href="<?php echo base_url(); ?>index.php?admin/admin_dashboard" class="waves-effect"><i class="ti-dashboard"></i> <span class="hide-menu"><?php echo get_phrase('Dashboard');?></span></a>
                     </li>
-                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span class="hide-menu"><?php echo get_phrase('Users-Account'); ?><span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-search"></i> <span class="hide-menu"><?php echo get_phrase('Users-Account'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="<?php echo base_url(); ?>index.php?admin/admins"><?php echo get_phrase('Admins'); ?></a></li>
                             <li> <a href="<?php echo base_url(); ?>index.php?admin/teachers"><?php echo get_phrase('Teachers'); ?></a></li>

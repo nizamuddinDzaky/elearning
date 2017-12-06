@@ -290,6 +290,21 @@ class Admin extends CI_Controller
         $this->load->view('backend/index', $page_data);
     }
 
+    function student_profile($student_id, $param1='')
+    {
+        if ($this->session->userdata('admin_login') != 1) 
+        {
+            $this->session->set_userdata('last_page', current_url());
+            redirect(base_url(), 'refresh');
+        }
+        $page_data['page_name']  = 'student_profile';
+        $page_data['page_title'] =  get_phrase('Profile');
+        $page_data['student_id']  =  $student_id;
+        $this->load->view('backend/index', $page_data);
+
+
+    }
+
     function get_sections($class_id)
     {
         $page_data['class_id'] = $class_id;
@@ -580,6 +595,7 @@ class Admin extends CI_Controller
         }
         if ($param1 == 'do_update') 
         {
+            // echo "string";
             $data['name']           = $this->input->post('name');
             $data['username']           = $this->input->post('username');
             $data['phone']          = $this->input->post('phone');
@@ -590,12 +606,19 @@ class Admin extends CI_Controller
             $data['transport_id']   = $this->input->post('transport_id');
             $data['student_session'] = $this->input->post('student_session');
             $data['email']          = $this->input->post('email');
+            // echo $_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $param3 . '.jpg';
             $this->db->where('student_id', $param2);
             $this->db->update('student', $data);
 
-            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $param3 . '.jpg');
+            move_uploaded_file($_FILES['userfile']['tmp_name'], 'uploads/student_image/' . $param2 . '.jpg');
             $this->crud_model->clear_cache();
             redirect(base_url() . 'index.php?admin/student_portal/' . $param2, 'refresh');
+        }
+        if ($param1 == 'delete') 
+        {
+            $this->db->where('student_id', $param2);
+            $this->db->delete('student');
+            redirect(base_url() . 'index.php?admin/add_student/', 'refresh');
         }
     }
 

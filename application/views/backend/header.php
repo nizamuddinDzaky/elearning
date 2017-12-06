@@ -15,7 +15,7 @@
                 <?php endif; ?>
                 <b><img src="<?php echo base_url();?>style/images/logoadmin.png" alt="home" /></b><span class="hidden-xs"><strong>EduAppGT</strong>PRO</span></a></div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
-                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="fa fa-bars ti-menu"></i></a></li>
                     <?php if($this->session->userdata('login_type') == 'admin') : ?>
                     <li>
                      <?php echo form_open(base_url() . 'index.php?admin/search' , array('onsubmit' => 'return validate() role="search" class="app-search hidden-xs"')); ?>
