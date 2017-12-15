@@ -21,6 +21,7 @@
 <script type="text/javascript" src="<?php echo base_url();?>style/js/jPlayer/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>style/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
 <script src="<?php echo base_url();?>style/js/dashboard1.js"></script>
+
 <script src="<?php echo base_url();?>style/bower_components/switchery/dist/switchery.min.js"></script>
 <script src="<?php echo base_url();?>style/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 <script src="<?php echo base_url();?>style/bower_components/owl.carousel/owl.carousel.min.js"></script>

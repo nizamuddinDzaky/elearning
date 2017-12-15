@@ -19,7 +19,7 @@
     <div class="modal fade" id="modal_ajax">
         <div class="modal-dialog">
             <div class="modal-content">            
-                <div class="modal-body" style="height:500px; overflow:auto;">
+                <div class="modal-body"  overflow:auto;">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal"><?php echo get_phrase('Close'); ?></button>

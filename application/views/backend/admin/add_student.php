@@ -23,6 +23,8 @@
             	</a>
             </li>
 		</ul>
+	</div>
+</div>
 
 <div class="tab-content">
 		<div class="tab-pane box active" id="list">

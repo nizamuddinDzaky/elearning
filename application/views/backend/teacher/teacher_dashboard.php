@@ -13,7 +13,7 @@
 <div class="col-md-12">
 <div class="alert alert-info">
         <span style="color: #fff; font-weight: Verdana; font-size: 23px;">
-<marquee direction="left" scrollamount="10"><?php echo $this->db->get_where('settings' , array('type' =>'ad'))->row()->description;?></marquee></span>
+<marquee direction="left" scrollamount="10">Wellcome To Teacher's Page</marquee></span>
 </div>
 </div>
 </div>

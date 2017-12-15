@@ -30,6 +30,19 @@ class Login extends CI_Controller {
         $this->load->view('backend/login');
     }
 
+    function logins(){
+        // echo "string";
+        // echo ;
+        $login_status = $this->validate_login($this->input->post('user'), sha1( $this->input->post('password')));
+        // echo  $login_status;
+        if ($login_status = 'success') {
+            // echo ;
+        // print_r($this->session->userdata());
+            
+             redirect(base_url() . 'index.php?'.$this->session->userdata('login_type').'/'.$this->session->userdata('login_type').'_dashboard', 'refresh');
+        }
+    }
+
     function ajax_login() {
         $response = array();
         $email = $_POST["email"];
@@ -91,7 +104,7 @@ class Login extends CI_Controller {
     function four_zero_four() {
         $this->load->view('four_zero_four');
     }
-	
+    
     function logout() {
         $this->session->sess_destroy();
         $this->session->set_flashdata('logout_notification', 'logged_out');

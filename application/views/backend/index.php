@@ -18,9 +18,7 @@
 </head>
 
 <body>
-	<div class="preloader">
-        <div class="cssload-speeding-wheel"></div>
-    </div>
+	
     <div id="wrapper">
 		<?php include $account_type.'/navigation.php';?>	
 		<?php include 'header.php';?>

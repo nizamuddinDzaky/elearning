@@ -21,6 +21,7 @@ class Admin extends CI_Controller
 
     function admin_dashboard()
     {
+        // print_r($this->session->userdata());
         if ($this->session->userdata('admin_login') != 1)
             redirect(base_url(), 'refresh');
         $page_data['page_name']  = 'admin_dashboard';
@@ -560,6 +561,7 @@ class Admin extends CI_Controller
 
     function student($param1 = '', $param2 = '', $param3 = '')
     {
+        // echo $param1;
         if ($this->session->userdata('admin_login') != 1)
             redirect('login', 'refresh');
         $running_year = $this->db->get_where('settings' , array(
@@ -619,6 +621,17 @@ class Admin extends CI_Controller
             $this->db->where('student_id', $param2);
             $this->db->delete('student');
             redirect(base_url() . 'index.php?admin/add_student/', 'refresh');
+        }
+        if ($param1 == 'change_password' ) {
+            // echo "string";
+            $data['new_password'] = sha1($this->input->post('new_password'));
+            $data['confirm_new_password'] = sha1($this->input->post('confirm_new_password'));
+            if ($data['new_password'] == $data['confirm_new_password']) 
+            {
+                $this->db->where('student_id', $param2);
+                $this->db->update('student', array('password' => $data['new_password']));
+            } 
+            redirect(base_url() . 'index.php?admin/add_student/','refresh');
         }
     }
 
@@ -790,7 +803,7 @@ class Admin extends CI_Controller
             redirect(base_url(), 'refresh');
         if ($param1 == 'create') {
             $data['name']         = $this->input->post('name');
-            $data['teacher_id']   = $this->input->post('teacher_id');
+            // $data['teacher_id']   = $this->input->post('teacher_id');
             $this->db->insert('class', $data);
             $class_id = $this->db->insert_id();
             $data2['class_id']  =   $class_id;
@@ -2054,5 +2067,12 @@ class Admin extends CI_Controller
     {
         $page_data['search_key']    =   $this->input->post('search_key');
         $this->load->view('backend/admin/search_result', $page_data);
+    }
+
+    function information()
+    {
+        $page_data['page_title']    = get_phrase('Student-Promotion');
+        $page_data['page_name']  = 'information';
+        $this->load->view('backend/index', $page_data);
     }
 }

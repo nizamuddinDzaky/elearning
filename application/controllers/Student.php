@@ -172,6 +172,8 @@ class Student extends CI_Controller
         $page_data['page_name']  = 'teacher';
         $page_data['page_title'] = get_phrase('Teachers');
         $this->load->view('backend/index', $page_data);
+        // print_r($page_data);
+        // echo "string";
     }
     
     function subject($param1 = '', $param2 = '')

@@ -15,7 +15,6 @@
 <div class="main_data">
     <?php
 $profile_info = $this->db->get_where('student' , array('student_id' => $student_id))->result_array();
-print_r($profile_info);
 foreach($profile_info as $row):?>
           <div class="user-profile">
             <div class="row">
@@ -161,10 +160,10 @@ foreach($profile_info as $row):?>
             </div>
             <div class="panel-body">
                     <?php 
-                   $edit_datas = $this->db->get_where('teacher' , array('teacher_id' => $teacher_id))->result_array();
+                   $edit_datas = $this->db->get_where('student' , array('student_id' => $student_id))->result_array();
                     foreach($edit_datas as $row3):
                         ?>
-                         <?php echo form_open(base_url() . 'index.php?admin/teachers/change_password/'.$row3['teacher_id'], array('class' => 'form-horizontal form-groups-bordered validate ajax-submit', 'enctype' => 'multipart/form-data'));?>
+                         <?php echo form_open(base_url() . 'index.php?admin/student/change_password/'.$row3['student_id'], array('class' => 'form-horizontal form-groups-bordered validate ajax-submit', 'enctype' => 'multipart/form-data'));?>
 
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"><?php echo get_phrase('New-Password');?></label>

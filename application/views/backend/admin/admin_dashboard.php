@@ -6,24 +6,24 @@ $system_name        =	$this->db->get_where('settings' , array('type'=>'system_ti
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 	    <h4 class="page-title"><?php echo get_phrase('Admin-Dashboard');?></h4> </div>
-    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+    <!-- <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url(); ?>index.php?admin/admin_dashboard"><?php echo $system_title; ?></a></li>
             <li class="active"><?php echo get_phrase('Admin-Dashboard');?></li>
         </ol>
-    </div>
+    </div> -->
 </div>
 
 <div class="row">
 <div class="col-md-12">
 <div class="alert alert-info">
         <span style="color: #fff; font-weight: Verdana; font-size: 23px;">
-<marquee direction="left" scrollamount="10"><?php echo $this->db->get_where('settings' , array('type' =>'ad'))->row()->description;?></marquee></span>
+<marquee direction="left" scrollamount="10">Selamat Datang di Halaman Admin E - learning</marquee></span>
 </div>
 </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
 <div class="col-md-6">
                         <div class="white-box">
                             <h3 class="box-title">Social</h3>
@@ -55,9 +55,9 @@ $system_name        =	$this->db->get_where('settings' , array('type'=>'system_ti
                 </div>
                 
             </div>
-</div>
+</div> -->
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-wrapper p-b-10 collapse in">
@@ -94,7 +94,7 @@ $system_name        =	$this->db->get_where('settings' , array('type'=>'system_ti
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="row">
    				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">

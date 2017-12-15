@@ -1,1 +1,1 @@
-<footer class="footer text-center"> 2016 &copy; WebStudioApps - EduAppGT PRO</footer>
+<footer class="footer text-center"> 2017 &copy; EduAppGT</footer>
