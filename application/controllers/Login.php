@@ -38,7 +38,7 @@ class Login extends CI_Controller {
         // echo  $login_status;
         if ($login_status = 'success') {
             // echo ;
-        // print_r($this->session->userdata());
+        print_r($this->session->userdata());die;
             
              redirect(base_url() . 'index.php?'.$this->session->userdata('login_type').'/'.$this->session->userdata('login_type').'_dashboard', 'refresh');
         }
