@@ -33,11 +33,12 @@
     <?php
     $counter = 1;
     $this->db->where('homework_status', 1);
+    $this->db->where('uploader_id', $this->session->userdata('login_user_id'));
     $this->db->order_by('homework_id', 'desc');
     $homeworks = $this->db->get('homework')->result_array();
     foreach ($homeworks as $row):
         ?>
-    <?php  if ($this->session->userdata('login_user_id') == $row['uploader_id']) { ?>
+    
         <tr>
             <td style="text-align: center;"><?php echo $counter++; ?></td>
             <td style="text-align: center;"><a href="<?php echo base_url(); ?>index.php?teacher/homeworkroom/details/<?php echo $row['homework_code']; ?>">
@@ -63,7 +64,7 @@
                 </a>
             </td>
         </tr>
-        <?php } ?>
+        
 <?php endforeach; ?>
 </tbody>
 </table>

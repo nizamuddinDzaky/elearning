@@ -10,7 +10,7 @@
                     <hr>
                     <li> <a href="<?php echo base_url(); ?>index.php?student/student_dashboard" class="waves-effect"><i class="ti-dashboard"></i> <span class="hide-menu"><?php echo get_phrase('Dashboard');?></span></a>
                     </li>
-                    <li> <a href="<?php echo base_url(); ?>index.php?student/teacher_list" class="waves-effect"><i class="fa fa-users"></i> <span class="hide-menu"><?php echo get_phrase('Teachers'); ?></span></a>
+                    <!-- <li> <a href="<?php echo base_url(); ?>index.php?student/teacher_list" class="waves-effect"><i class="fa fa-users"></i> <span class="hide-menu"><?php echo get_phrase('Teachers'); ?></span></a>
                     </li>
                     <li> <a href="<?php echo base_url(); ?>index.php?student/events" class="waves-effect"><i class="fa fa-calendar"></i> <span class="hide-menu"><?php echo get_phrase('Events'); ?></span></a>
                     </li>
@@ -23,10 +23,10 @@
                     <li> <a href="<?php echo base_url(); ?>index.php?student/unit_content/<?php echo $this->session->userdata('login_user_id');?>" class="waves-effect"><i class="fa fa-cubes"></i> <span class="hide-menu"><?php echo get_phrase('Semester-Content'); ?></span></a>
                     </li>
                      <li> <a href="<?php echo base_url(); ?>index.php?<?php echo $account_type; ?>/study_material" class="waves-effect"><i class="fa fa-slack"></i> <span class="hide-menu"><?php echo get_phrase('Study-Material'); ?></span></a>
-                    </li>
+                    </li> -->
                     <li> <a href="<?php echo base_url(); ?>index.php?student/homework/<?php echo $this->session->userdata('login_user_id');?>" class="waves-effect"><i class="fa fa-fax"></i> <span class="hide-menu"><?php echo get_phrase('My-Homework'); ?></span></a>
                     </li>
-                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-book"></i> <span class="hide-menu"><?php echo get_phrase('Library'); ?><span class="fa arrow"></span></span></a>
+                    <!-- <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-book"></i> <span class="hide-menu"><?php echo get_phrase('Library'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="<?php echo base_url(); ?>index.php?student/library"><?php echo get_phrase('Library'); ?></a></li>
                              <li> <a href="<?php echo base_url(); ?>index.php?student/libreria_virtual/<?php echo $this->session->userdata('login_user_id');?>"><?php echo get_phrase('Virtual-Library'); ?></a></li>
@@ -70,7 +70,7 @@
                           </ul>
                     </li>
                     <li> <a href="<?php echo base_url(); ?>index.php?student/message" class="waves-effect"><i class="fa fa-envelope"></i> <span class="hide-menu"><?php echo get_phrase('Messages'); ?></span></a>
-                    </li>
+                    </li> -->
         </ul>
     </div>
 </div>
