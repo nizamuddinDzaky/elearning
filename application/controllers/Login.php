@@ -31,14 +31,14 @@ class Login extends CI_Controller {
     }
 
     function logins(){
-        echo "string";die;
+        // echo "string";
         // echo ;
         // echo sha1( $this->input->post('password'));die;
         $login_status = $this->validate_login($this->input->post('user'), sha1( $this->input->post('password')));
         // echo  $login_status;
         if ($login_status = 'success') {
             // echo ;
-        print_r($this->session->userdata());die;
+        // print_r($this->session->userdata());
             
              redirect(base_url() . 'index.php?'.$this->session->userdata('login_type').'/'.$this->session->userdata('login_type').'_dashboard', 'refresh');
         }
