@@ -22,7 +22,7 @@
                              <?php endforeach; ?>
                         </ul>
                     </li>
-                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i> <span class="hide-menu"><?php echo get_phrase('Subjects'); ?><span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i> <span class="hide-menu"><?php echo get_phrase('Subjects'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                         <?php $classes = $this->db->get('class')->result_array();
                             foreach ($classes as $row): ?>
@@ -34,21 +34,21 @@
                              <?php endforeach; ?>
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-graduation-cap"></i> <span class="hide-menu"><?php echo get_phrase('Qualifications'); ?><span class="fa arrow"></span></span></a>
+                    <!-- <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-graduation-cap"></i> <span class="hide-menu"><?php echo get_phrase('Qualifications'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                              <li> <a href="<?php echo base_url(); ?>index.php?teacher/upload_marks"><?php echo get_phrase('Upload-Marks'); ?></a></li>
                              <?php if($this->db->get_where('academic_settings' , array('type' =>'teacher_average'))->row()->description == 1):?>
                              <li> <a href="<?php echo base_url(); ?>index.php?teacher/tab_sheet"><?php echo get_phrase('Tabulation'); ?></a></li>
                          <?php endif; ?>
                         </ul>
-                    </li>
+                    </li> -->
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-calendar"></i> <span class="hide-menu"><?php echo get_phrase('Homework'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="<?php echo base_url(); ?>index.php?teacher/homework"><?php echo get_phrase('List'); ?></a></li>
                              <li> <a href="<?php echo base_url(); ?>index.php?teacher/homework_add"><?php echo get_phrase('Add'); ?></a></li>
                         </ul>
                     </li>
-                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-check-box"></i> <span class="hide-menu"><?php echo get_phrase('Attendance'); ?><span class="fa arrow"></span></span></a>
+                     <!-- <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-check-box"></i> <span class="hide-menu"><?php echo get_phrase('Attendance'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                         <?php
                 $classes = $this->db->get('class')->result_array();
@@ -57,8 +57,8 @@
                             <li> <a href="<?php echo base_url(); ?>index.php?teacher/manage_attendance/<?php echo $row['class_id']; ?>"><?php echo $row['name']; ?></a></li>
                               <?php endforeach; ?>
                         </ul>
-                    </li>
-                     <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="F" class="ti-alarm-clock"></i> <span class="hide-menu"><?php echo get_phrase('Schedules'); ?><span class="fa arrow"></span></span></a>
+                    </li> -->
+                     <!-- <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="F" class="ti-alarm-clock"></i> <span class="hide-menu"><?php echo get_phrase('Schedules'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                         <li> <a href="javascript:void(0)" class="waves-effect"><?php echo get_phrase('Class-Routine'); ?><span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
@@ -79,8 +79,8 @@
                             </ul>
                         </li>
                     </ul>
-                    </li>
-                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-file-picture-o"></i> <span class="hide-menu"><?php echo get_phrase('Gallery'); ?><span class="fa arrow"></span></span></a>
+                    </li> -->
+                     <!-- <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-file-picture-o"></i> <span class="hide-menu"><?php echo get_phrase('Gallery'); ?><span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                              <li> <a href="<?php echo base_url(); ?>index.php?teacher/videos"><?php echo get_phrase('VideoGallery'); ?></a></li>
                         </ul>
@@ -121,7 +121,7 @@
                           </ul>
                     </li>
                     <li> <a href="<?php echo base_url(); ?>index.php?teacher/message" class="waves-effect"><i class="fa fa-envelope"></i> <span class="hide-menu"><?php echo get_phrase('Messages'); ?></span></a>
-                    </li>
+                    </li> -->
         </ul>
     </div>
 </div>
