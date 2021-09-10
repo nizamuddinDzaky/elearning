@@ -31,7 +31,7 @@ class Login extends CI_Controller {
     }
 
     function logins(){
-        // echo "string";
+        echo "string";die;
         // echo ;
         // echo sha1( $this->input->post('password'));die;
         $login_status = $this->validate_login($this->input->post('user'), sha1( $this->input->post('password')));
